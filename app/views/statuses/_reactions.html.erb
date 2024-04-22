@@ -1,11 +1,11 @@
 <% if status.reactions.size > 0 %>
   <div class="post-reaction">
     <div class="reaction-icon">
-      <% status.reactions.map(&:symbol).tally.take(2).sort { |a, b| b.last <=> a.last }.each do |reaction, count| %>
+      <% most_received_reactions(status).each do |reaction, _count| %>
         <%= image_tag "/media/figure/reaction_#{reaction}.png" %>
       <% end %>
     </div>
-    <% unless status.parent %>
+    <% unless status.parent_id %>
       <div class="meta-text"><%= status.reactions.size %></div>
     <% end %>
   </div>
