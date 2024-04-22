@@ -1,0 +1,24 @@
+<div class="post-header">
+  <div class="post-header">
+    <div class="media">
+      <div class="user-img">
+        <%= image_tag "https://api.dicebear.com/7.x/micah/jpg?seed=#{status.profile.full_name.underscore}" %>
+      </div>
+      <div class="media-body">
+        <div class="user-title">
+          <%= link_to status.profile.full_name, status.profile %>
+          <%# <i class="icofont-check"></i> %>
+          <%# posted to his <a href="#">Coworkers</a> circle  %>
+        </div>
+        <ul class="entry-meta">
+          <li class="meta-privacy"><i class="icofont-world"></i> Public</li>
+          <li class="meta-time"><%= time_ago_in_words(status.created_at) %> ago</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <%= dropdown items_tag: nil, alignment: :end do|dd| %>
+    <% dd.item 'Edit', '#' %>
+    <% dd.item 'Delete', '#' %>
+  <% end %>
+</div>

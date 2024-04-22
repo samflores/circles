@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-lg-8">
+    <%= render 'new_post_form' %>
+    <% @statuses.each do |status| %>
+      <%= render status %>
+    <% end %>
+    <div class="block-box load-more-btn">
+      <a href="#" class="item-btn"><i class="icofont-refresh"></i>Load More Posts</a>
+    </div>
+  </div>
+  <div class="col-lg-4 widget-block widget-break-lg">
+    <%= render 'author_widget' %>
+    <%= render 'friends_widget' %>
+    <%= render 'circles_widget' %>
+    <%= render 'activity_widget' %>
+  </div>
+</div>

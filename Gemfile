@@ -38,5 +38,9 @@ end
 
 group :development do
   gem 'rack-mini-profiler'
+  gem 'bullet'
   gem 'web-console'
 end
+
+gem 'bootstrap', '~> 5.3'
+gem 'sassc-rails', '~> 2.1'

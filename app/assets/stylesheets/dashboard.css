@@ -2065,6 +2065,8 @@
 
 .post-view .post-comment .comment-reply .user-img img {
   border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }
 
 .post-view .post-comment .comment-reply .input-box {

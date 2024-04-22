@@ -1,0 +1,21 @@
+<div class="post-footer">
+  <ul>
+    <li class="post-react">
+      <a href="#"><i class="icofont-thumbs-up"></i>React!</a>
+      <ul class="react-list">
+        <% Reaction.symbols.each do |symbol, value| %>
+          <li>
+            <%= link_to '#' do %>
+              <%= image_tag "/media/figure/reaction_#{symbol}.png" %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+    <li>
+      <a data-bs-toggle="collapse" href="#commentReply<%= status.id %>">
+        <i class="icofont-comment"></i>Comment
+      </a>
+    </li>
+  </ul>
+</div>

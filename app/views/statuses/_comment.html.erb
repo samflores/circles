@@ -1,0 +1,51 @@
+<div class="each-comment">
+  <div class="post-header">
+    <div class="media">
+      <div class="user-img">
+        <%= image_tag "https://api.dicebear.com/7.x/micah/jpg?seed=#{status.profile.full_name.underscore}" %>
+      </div>
+      <div class="media-body">
+        <div class="user-title">
+          <%= link_to status.profile.full_name, status.profile %>
+        </div>
+        <ul class="entry-meta">
+          <li class="meta-privacy"><i class="icofont-world"></i>Friends</li>
+          <li class="meta-time"><%= time_ago_in_words(status.created_at) %> ago</li>
+        </ul>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+        ...
+      </button>
+      <div class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item" href="#">Close</a>
+        <a class="dropdown-item" href="#">Edit</a>
+        <a class="dropdown-item" href="#">Delete</a>
+      </div>
+    </div>
+  </div>
+  <div class="post-body">
+    <p><%= status.body %></p>
+  </div>
+  <div class="post-footer">
+    <ul>
+      <li class="react-icon">
+        <%= render 'statuses/reactions', status: status %>
+      </li>
+      <li class="post-react">
+        <a href="#"><i class="icofont-thumbs-up"></i>React!</a>
+        <ul class="react-list">
+          <% Reaction.symbols.each do |symbol, value| %>
+            <li>
+              <%= link_to '#' do %>
+                <%= image_tag "/media/figure/reaction_#{symbol}.png" %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+      <li><a href="#"><i class="icofont-reply"></i>Reply</a></li>
+    </ul>
+  </div>
+</div>

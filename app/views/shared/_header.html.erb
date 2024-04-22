@@ -22,67 +22,26 @@
           </form>
 
           <ul class="inline-item navbar-nav">
-            <li class="nav-item dropdown dropdown-friend">
-              <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= dropdown(container_tag: :li, items_tag: nil, alignment: :end, classname: 'nav-item dropdown-friend') do |dd| %>
+              <% dd.trigger do %>
                 <i class="icofont-users-alt-4"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-end">
-                <div class="item-heading">
-                  <h6 class="heading-title">Friend Requests</h6>
-                  <div class="heading-btn">
-                    <a href="#">Settings</a>
-                    <a href="#">Mark all as Read</a>
-                  </div>
-                </div>
+              <% end %>
+              <% dd.item do |name, url| %>
+                <%= render 'shared/header_dropdown_heading',
+                  title: 'Friend Requests',
+                  actions: [{ label: 'Settings', url: '#' }, { label: 'Mark all as Read', url: '#' }] %>
+              <% end %>
+              <% dd.item do |name, url| %>
                 <div class="item-body">
-                  <div class="media">
-                    <div class="item-img">
-                      <%= image_tag "/media/figure/chat_5.jpg" %>
-                      <span class="chat-status offline"></span>
-                    </div>
-                    <div class="media-body">
-                      <h6 class="item-title"><a href="#">Lily Zaman</a></h6>
-                      <p>4 in mutual friends</p>
-                      <div class="btn-area">
-                        <a href="#" class="item-btn"><i class="icofont-plus"></i></a>
-                        <a href="#" class="item-btn"><i class="icofont-minus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="media">
-                    <div class="item-img">
-                      <%= image_tag "/media/figure/chat_1.jpg" %>
-                      <span class="chat-status online"></span>
-                    </div>
-                    <div class="media-body">
-                      <h6 class="item-title"><a href="#">Ketty Rose</a></h6>
-                      <p>3 in mutual friends</p>
-                      <div class="btn-area">
-                        <a href="#" class="item-btn"><i class="icofont-plus"></i></a>
-                        <a href="#" class="item-btn"><i class="icofont-minus"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="media">
-                    <div class="item-img">
-                      <%= image_tag "/media/figure/chat_8.jpg" %>
-                      <span class="chat-status online"></span>
-                    </div>
-                    <div class="media-body">
-                      <h6 class="item-title"><a href="#">Rustom vai</a></h6>
-                      <p>6 in mutual friends</p>
-                      <div class="btn-area">
-                        <a href="#" class="item-btn"><i class="icofont-plus"></i></a>
-                        <a href="#" class="item-btn"><i class="icofont-minus"></i></a>
-                      </div>
-                    </div>
-                  </div>
+                  <%= render 'shared/friend_request' %>
                 </div>
+              <% end %>
+              <% dd.item do |name, url| %>
                 <div class="item-footer">
                   <a href="#" class="view-btn">View All Friend Request</a>
                 </div>
-              </div>
-            </li>
+              <% end %>
+            <% end %>
 
             <li class="nav-item dropdown dropdown-message">
               <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -186,7 +145,7 @@
               </div>
             </li>
           </ul>
-          
+
           <ul class="navbar-nav inline-item header-control">
             <li class="dropdown dropdown-admin">
               <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -1,0 +1,11 @@
+<div class="post-body">
+  <p><%= status.body %></p>
+  <div class="post-meta-wrap">
+    <div class="post-meta">
+      <%= render 'statuses/reactions', status: status %>
+    </div>
+    <div class="post-meta">
+      <%= render 'statuses/metrics', status: status %>
+    </div>
+  </div>
+</div>
