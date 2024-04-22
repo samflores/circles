@@ -8,4 +8,10 @@ class Reaction < ApplicationRecord
     heart: 2,
     vomit: 3
   }
+
+  scope :count_by_symbol, lambda {
+    group(:symbol)
+      .order(count_all: :desc)
+      .count
+  }
 end

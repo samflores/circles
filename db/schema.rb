@@ -22,11 +22,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_18_205231) do
     t.index ["profile_id"], name: "index_circles_on_profile_id"
   end
 
-  create_table "circles_profiles", id: false, force: :cascade do |t|
-    t.bigint "circle_id", null: false
-    t.bigint "profile_id", null: false
-  end
-
   create_table "friendships", force: :cascade do |t|
     t.bigint "circle_id", null: false
     t.bigint "profile_id", null: false

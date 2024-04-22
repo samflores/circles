@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+$tooltip-bg: #5edfff;
+
+@import "bootstrap";
+@import "typography";
+@import "overrides";
+@import "vendor";
+@import "layout";
+@import "pages";
+@import "dashboard";

@@ -2,15 +2,32 @@
 <html>
   <head>
     <title>Circles</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/dependencies/icofont/icofont.min.css">
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-link-water">
+    <a href="#wrapper" data-type="section-switch" class="scrollup">
+      <i class="icofont-bubble-up"></i>
+    </a>
+
+    <div id="wrapper" class="wrapper">
+      <%= render 'shared/header' %>
+      <%= render 'shared/sidebar' %>
+      <div class="page-content">
+        <div class="container">
+          <%= yield %>
+        </div>
+        <%= render 'shared/footer' %>
+      </div>
+    </div>
+
+    <%= javascript_importmap_tags %>
   </body>
 </html>
