@@ -161,13 +161,40 @@
               </button>
               <div class="dropdown-menu">
                 <ul class="admin-options">
-                  <li><a href="#">Profile Settings</a></li>
-                  <li><a href="user-groups.html">Groups</a></li>
-                  <li><a href="forums.html">Forums</a></li>
-                  <li><a href="#">Settings</a></li>
-                  <li><a href="#">Terms and Conditions</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="login.html">Log Out</a></li>
+                  <li class="dropdown-item">
+                    <a href="#">
+                      <i class="icofont-ui-user"></i>
+                      Profile Settings
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="#">
+                      <i class="icofont-ui-settings"></i>
+                      Settings
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="user-groups.html">
+                      <i class="icofont-ui-user-group"></i>
+                      Circles
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="contact.html">
+                      <i class="icofont-support-faq"></i>
+                      Contact & Support
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="logout.html">
+                      <i class="icofont-logout"></i>
+                      Logout
+                    </a>
+                    <%# link_to session_path, turbo_method: :delete do %>
+                      <%# <i class="icofont-logout"></i> %>
+                      <%# Log out %>
+                    <%# end %>
+                  </li>
                 </ul>
               </div>
             </li>
