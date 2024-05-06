@@ -22,128 +22,9 @@
           </form>
 
           <ul class="inline-item navbar-nav">
-            <%= dropdown(container_tag: :li, items_tag: nil, alignment: :end, classname: 'nav-item dropdown-friend') do |dd| %>
-              <% dd.trigger do %>
-                <i class="icofont-users-alt-4"></i>
-              <% end %>
-              <% dd.item do |name, url| %>
-                <%= render 'shared/header_dropdown_heading',
-                  title: 'Friend Requests',
-                  actions: [{ label: 'Settings', url: '#' }, { label: 'Mark all as Read', url: '#' }] %>
-              <% end %>
-              <% dd.item do |name, url| %>
-                <div class="item-body">
-                  <%= render 'shared/friend_request' %>
-                </div>
-              <% end %>
-              <% dd.item do |name, url| %>
-                <div class="item-footer">
-                  <a href="#" class="view-btn">View All Friend Request</a>
-                </div>
-              <% end %>
-            <% end %>
-
-            <li class="nav-item dropdown dropdown-message">
-              <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="icofont-speech-comments"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-end">
-                <div class="item-heading">
-                  <h6 class="heading-title">Message</h6>
-                  <div class="heading-btn">
-                    <a href="#">Settings</a>
-                    <a href="#">Mark all as Read</a>
-                  </div>
-                </div>
-                <div class="item-body">
-                  <a href="#" class="media">
-                    <div class="item-img">
-                      <%= image_tag "/media/figure/notifiy_1.png" %>
-                    </div>
-                    <div class="media-body">
-                      <h6 class="item-title">Diana Jameson</h6>
-                      <div class="item-time">15 mins ago</div>
-                      <p>when are nknowen printer took galley of types ...</p>
-                    </div>
-                  </a>
-                  <a href="#" class="media">
-                    <div class="item-img">
-                      <%= image_tag "/media/figure/notifiy_2.png" %>
-                    </div>
-                    <div class="media-body">
-                      <h6 class="item-title">Quirty</h6>
-                      <div class="item-time">15 mins ago</div>
-                      <p>when are nknowen printer took galley of types ...</p>
-                    </div>
-                  </a>
-                  <a href="#" class="media">
-                    <div class="item-img">
-                      <%= image_tag "/media/figure/notifiy_3.png" %>
-                    </div>
-                    <div class="media-body">
-                      <h6 class="item-title">Zinia Jessy</h6>
-                      <div class="item-time">15 mins ago</div>
-                      <p>when are nknowen printer took galley of types ...</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="item-footer">
-                  <a href="#" class="view-btn">View All Messages</a>
-                </div>
-              </div>
-            </li>
-
-            <li class="nav-item d-flex align-items-center">
-              <div class="dropdown dropdown-notification">
-                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="icofont-notification"></i><span class="notify-count">3</span>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end">
-                  <div class="item-heading">
-                    <h6 class="heading-title">Notifications</h6>
-                    <div class="heading-btn">
-                      <a href="#">Settings</a>
-                      <a href="#">Mark all as Read</a>
-                    </div>
-                  </div>
-                  <div class="item-body">
-                    <a href="#" class="media">
-                      <div class="item-img">
-                        <%= image_tag "/media/figure/notifiy_1.png" %>
-                      </div>
-                      <div class="media-body">
-                        <h6 class="item-title">Diana Jameson</h6>
-                        <div class="item-time">15 mins ago</div>
-                        <p>when are nknowen printer took galley of types ...</p>
-                      </div>
-                    </a>
-                    <a href="#" class="media">
-                      <div class="item-img">
-                        <%= image_tag "/media/figure/notifiy_2.png" %>
-                      </div>
-                      <div class="media-body">
-                        <h6 class="item-title">Quirty</h6>
-                        <div class="item-time">15 mins ago</div>
-                        <p>when are nknowen printer took galley of types ...</p>
-                      </div>
-                    </a>
-                    <a href="#" class="media">
-                      <div class="item-img">
-                        <%= image_tag "/media/figure/notifiy_3.png" %>
-                      </div>
-                      <div class="media-body">
-                        <h6 class="item-title">Zinia Jessy</h6>
-                        <div class="item-time">15 mins ago</div>
-                        <p>when are nknowen printer took galley of types ...</p>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="item-footer">
-                    <a href="#" class="view-btn">View All Notification</a>
-                  </div>
-                </div>
-              </div>
-            </li>
+            <%= render 'shared/friend_requests_dropdown', notifications: [] %>
+            <%= render 'shared/chat_messages_dropdown', notifications: [] %>
+            <%= render 'shared/notifications_dropdown', notifications: [] %>
           </ul>
 
           <ul class="navbar-nav inline-item header-control">
@@ -186,14 +67,14 @@
                     </a>
                   </li>
                   <li class="dropdown-item">
-                    <a href="logout.html">
+                    <%# <a href="logout.html"> %>
+                    <%#   <i class="icofont-logout"></i> %>
+                    <%#   Logout %>
+                    <%# </a> %>
+                    <%= link_to session_path, data: { turbo_method: :delete } do %>
                       <i class="icofont-logout"></i>
-                      Logout
-                    </a>
-                    <%# link_to session_path, turbo_method: :delete do %>
-                      <%# <i class="icofont-logout"></i> %>
-                      <%# Log out %>
-                    <%# end %>
+                      Log out
+                    <% end %>
                   </li>
                 </ul>
               </div>

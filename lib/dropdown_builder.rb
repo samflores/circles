@@ -23,7 +23,8 @@ class DropdownBuilder
     @items = []
   end
 
-  def trigger(text = nil, &)
+  def trigger(text = nil, enabled: true, &)
+    @trigger_enabled = enabled
     @trigger_content = if block_given?
                          @template.capture(&)
                        else
@@ -56,9 +57,9 @@ class DropdownBuilder
 
   def build_trigger
     if @trigger_tag == :a
-      link_to(trigger_content, '#', TRIGGER_OPTIONS.merge({ role: 'button' }))
+      link_to(trigger_content, '#', TRIGGER_OPTIONS.merge({ role: 'button', enabled: @trigger_enabled }))
     else
-      content_tag(@trigger_tag, TRIGGER_OPTIONS.merge({ type: 'button' })) do
+      content_tag(@trigger_tag, TRIGGER_OPTIONS.merge({ type: 'button', enabled: @trigger_enabled })) do
         concat(trigger_content)
       end
     end

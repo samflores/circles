@@ -2,7 +2,7 @@
   <div class="post-header">
     <div class="media">
       <div class="user-img">
-        <%= image_tag "https://api.dicebear.com/7.x/micah/jpg?seed=#{status.profile.full_name.underscore}" %>
+        <%= avatar_for status.profile %>
       </div>
       <div class="media-body">
         <div class="user-title">
@@ -17,7 +17,7 @@
       </div>
     </div>
   </div>
-  <%= dropdown items_tag: nil, alignment: :end do|dd| %>
+  <%= dropdown items_tag: nil, alignment: :end do |dd| %>
     <% dd.item 'Edit', '#' %>
     <% dd.item 'Delete', '#' %>
   <% end %>

@@ -6,4 +6,8 @@ module ApplicationHelper
     yield(builder)
     builder.build
   end
+
+  def avatar_for(profile, size: 48)
+    image_tag("https://api.dicebear.com/7.x/micah/jpg?seed=#{profile.full_name.underscore}")
+  end
 end

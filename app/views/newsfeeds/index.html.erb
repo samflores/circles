@@ -1,9 +1,7 @@
 <div class="row">
   <div class="col-lg-8">
     <%= render 'new_post_form' %>
-    <% @statuses.each do |status| %>
-      <%= render status %>
-    <% end %>
+    <%= render @statuses %>
     <div class="block-box load-more-btn">
       <a href="#" class="item-btn"><i class="icofont-refresh"></i>Load More Posts</a>
     </div>
