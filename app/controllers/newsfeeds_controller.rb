@@ -3,6 +3,8 @@
 # Newsfeed
 
 class NewsfeedsController < ApplicationController
+  before_action :authenticate_profile!
+
   def index
     @statuses = Status
                 .includes(%i[profile reactions], children: %i[profile reactions children])

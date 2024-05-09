@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_18_205231) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_08_234849) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,6 +36,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_18_205231) do
     t.string "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.boolean "tos_agreement", default: false, null: false
+    t.date "born_on", default: nil, null: false
+    t.index ["email"], name: "index_profiles_on_email", unique: true
   end
 
   create_table "reactions", force: :cascade do |t|

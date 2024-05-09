@@ -1,0 +1,52 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <%= link_to new_profile_session_path, class: 'nav-link active', role: 'tab', 'aria-selected': 'true' do %>
+      <i class="icofont-sign-in"></i> Sign In
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to new_profile_registration_path, class: 'nav-link', role: 'tab', 'aria-selected': 'false' do %>
+      <i class="icofont-users-alt-4"></i> Registration
+    <% end %>
+  </li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane login-tab fade show active" id="login-tab" role="tabpanel">
+    <h3 class="item-title">Sign Into <span>Your Account</span></h3>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div>
+        <div class="form-group">
+          <%= f.email_field :email,
+                            class: 'form-control',
+                            autofocus: true,
+                            autocomplete: 'email',
+                            placeholder: 'Your E-mail' %>
+        </div>
+        <div class="form-group">
+          <%= f.password_field :password,
+                               class: 'form-control',
+                               autocomplete: 'current-password',
+                               placeholder: 'Password' %>
+        </div>
+        <div class="form-group reset-password">
+          <%- if devise_mapping.recoverable? %>
+            <%= link_to 'Forgot my password?', new_password_path(resource_name) %><br>
+          <% end %>
+        </div>
+        <div class="form-group mb-4">
+          <div class="form-check">
+            <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%= f.check_box :remember_me, class: 'form-check-input' %>
+                <%= f.label :remember_me, 'Keep me signed in', class: 'form-check-label' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.submit 'Log in', class: 'submit-btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>

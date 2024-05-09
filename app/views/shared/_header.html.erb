@@ -3,7 +3,7 @@
     <div class="navbar navbar-dark bg-primary navbar-expand-lg">
       <div class="container-fluid">
         <a href="index.html" class="navbar-brand">
-          <%= image_tag "/media/logo.png" %>
+          <%= image_tag '/media/logo.png' %>
         </a>
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
@@ -14,7 +14,7 @@
         <div class="header-control">
           <form class="inline-item d-flex">
             <div class="inline-item input-group">
-              <input type="text" class="form-control" placeholder="Search here.......">
+              <input type="text" class="form-control" placeholder="Search here......." autocomplete="off">
               <div class="input-group-append">
                 <button class="submit-btn" type="button"><i class="icofont-search"></i></button>
               </div>
@@ -22,9 +22,9 @@
           </form>
 
           <ul class="inline-item navbar-nav">
-            <%= render 'shared/friend_requests_dropdown', notifications: [] %>
-            <%= render 'shared/chat_messages_dropdown', notifications: [] %>
-            <%= render 'shared/notifications_dropdown', notifications: [] %>
+            <%= render 'shared/friend_requests_dropdown', notifications: [1] %>
+            <%= render 'shared/chat_messages_dropdown', notifications: [2, 3] %>
+            <%= render 'shared/notifications_dropdown', notifications: [4, 5, 6] %>
           </ul>
 
           <ul class="navbar-nav inline-item header-control">
@@ -32,11 +32,13 @@
               <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <span class="media">
                   <span class="item-img">
-                    <%= image_tag "https://api.dicebear.com/7.x/micah/jpg?seed=Dexter-Morgan" %>
+                    <%= avatar_for current_profile %>
                     <span class="acc-verified"><i class="icofont-check"></i></span>
                   </span>
                   <span class="media-body">
-                    <span class="item-title">Dexter</span>
+                    <span class="item-title">
+                      <%= current_profile.full_name %>
+                    </span>
                   </span>
                 </span>
               </button>
@@ -67,11 +69,7 @@
                     </a>
                   </li>
                   <li class="dropdown-item">
-                    <%# <a href="logout.html"> %>
-                    <%#   <i class="icofont-logout"></i> %>
-                    <%#   Logout %>
-                    <%# </a> %>
-                    <%= link_to session_path, data: { turbo_method: :delete } do %>
+                    <%= link_to destroy_profile_session_path, data: { turbo_method: :delete } do %>
                       <i class="icofont-logout"></i>
                       Log out
                     <% end %>
@@ -80,7 +78,6 @@
               </div>
             </li>
           </ul>
-
         </div>
       </div>
     </div>

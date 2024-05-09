@@ -1,5 +1,5 @@
 <%= dropdown(container_tag: :li, items_tag: nil, alignment: :end, classname: 'nav-item dropdown-friend') do |dd| %>
-  <% dd.trigger enabled: notifications.size > 0 do %>
+  <% dd.trigger enabled: notifications.size.positive? do %>
     <i class="icofont-users-alt-4"></i>
     <% if notifications.size > 0 %>
       <span class="notify-count"><%= notifications.size %></span>

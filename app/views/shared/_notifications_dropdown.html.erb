@@ -1,5 +1,5 @@
 <%= dropdown(container_tag: :li, items_tag: nil, alignment: :end, classname: 'nav-item dropdown-notifications') do |dd| %>
-  <% dd.trigger enabled: notifications.size > 0 do %>
+  <% dd.trigger enabled: notifications.size.positive? do %>
     <i class="icofont-notification"></i>
     <% if notifications.size > 0 %>
       <span class="notify-count"><%= notifications.size %></span>
@@ -9,14 +9,14 @@
     <% dd.item do %>
       <%= render 'shared/header_dropdown_heading',
                  title: 'Notifications',
-                 actions: [{label: 'Settings', url: '#'}, {label: 'Mark all as Read', url: '#'}] %>
+                 actions: [{ label: 'Settings', url: '#' }, { label: 'Mark all as Read', url: '#' }] %>
     <% end %>
     <% dd.item do %>
       <div class="item-body">
         <% notifications.each do |notification| %>
           <a href="#" class="media">
             <div class="item-img">
-              <%= image_tag "/media/figure/notifiy_1.png" %>
+              <%= image_tag '/media/figure/notifiy_1.png' %>
             </div>
             <div class="media-body">
               <h6 class="item-title">Diana Jameson</h6>
