@@ -1,13 +1,18 @@
 # frozen_string_literal: true
 
+# https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
-  get 'profiles/show'
-  # https://guides.rubyonrails.org/routing.html
+  devise_for :profiles,
+             controllers: {
+               sessions: 'profiles/sessions',
+               registrations: 'profiles/registrations',
+               passwords: 'profiles/passwords'
+             }
 
   get 'news', to: 'newsfeeds#index'
   get 'up' => 'rails/health#show', as: :rails_health_check
 
-  resources :profiles
+  resources :profiles, only: %i[show]
 
-  # root "posts#index"
+  root 'newsfeeds#index'
 end

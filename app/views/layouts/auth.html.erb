@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Circles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/dependencies/icofont/icofont.min.css">
+  </head>
+
+  <body class="bg-link-water">
+    <a href="#wrapper" data-type="section-switch" class="scrollup">
+      <i class="icofont-bubble-up"></i>
+    </a>
+
+    <div id="wrapper" class="wrapper overflow-hidden">
+      <div class="login-page-wrap">
+        <div class="content-wrap">
+          <div class="login-content">
+            <div class="item-logo">
+              <a href="index.html" class="navbar-brand">
+                <%= image_tag '/media/logo.png' %>
+              </a>
+            </div>
+            <div class="login-form-wrap">
+              <%= yield %>
+            </div>
+          </div>
+          <div class="map-line">
+            <img src="/media/banner/map_line.png" alt="map">
+            <ul class="map-marker">
+              <li><img src="/media/banner/marker_1.png" alt="marker"></li>
+              <li><img src="/media/banner/marker_2.png" alt="marker"></li>
+              <li><img src="/media/banner/marker_3.png" alt="marker"></li>
+              <li><img src="/media/banner/marker_4.png" alt="marker"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <% if resource && resource.errors.any? %>
+        <% resource.errors.full_messages.each do |message| %>
+          <%= toast(title: 'Error', message:) %>
+        <% end %>
+      <% end %>
+      <% if alert %>
+        <%= toast message: alert %>
+      <% end %>
+      <% if notice %>
+        <%= toast title: 'Notice', message: notice %>
+      <% end %>
+    </div>
+
+    <%= javascript_importmap_tags %>
+  </body>
+</html>

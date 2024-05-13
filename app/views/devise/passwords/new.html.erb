@@ -1,0 +1,34 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <%= link_to new_profile_session_path, class: 'nav-link', role: 'tab', 'aria-selected': 'true' do %>
+      <i class="icofont-sign-in"></i> Sign in
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to new_profile_registration_path, class: 'nav-link', role: 'tab', 'aria-selected': 'false' do %>
+      <i class="icofont-users-alt-4"></i> Registration
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to new_profile_password_path, class: 'nav-link active', role: 'tab', 'aria-selected': 'false' do %>
+      <i class="icofont-ui-password"></i> Password Recovery
+    <% end %>
+  </li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane login-tab fade show active" id="password-recovery-tab" role="tabpanel">
+    <h3 class="item-title">Forgot Your Password?</h3>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <div class="form-group">
+        <%= f.email_field :email,
+                          class: 'form-control',
+                          autofocus: true,
+                          autocomplete: 'email',
+                          placeholder: 'Your E-mail' %>
+      </div>
+      <div class="form-group">
+        <%= f.submit 'Send me reset password instructions', class: 'submit-btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>

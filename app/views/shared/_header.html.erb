@@ -3,7 +3,7 @@
     <div class="navbar navbar-dark bg-primary navbar-expand-lg">
       <div class="container-fluid">
         <a href="index.html" class="navbar-brand">
-          <%= image_tag "/media/logo.png" %>
+          <%= image_tag '/media/logo.png' %>
         </a>
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
@@ -14,7 +14,7 @@
         <div class="header-control">
           <form class="inline-item d-flex">
             <div class="inline-item input-group">
-              <input type="text" class="form-control" placeholder="Search here.......">
+              <input type="text" class="form-control" placeholder="Search here......." autocomplete="off">
               <div class="input-group-append">
                 <button class="submit-btn" type="button"><i class="icofont-search"></i></button>
               </div>
@@ -22,128 +22,9 @@
           </form>
 
           <ul class="inline-item navbar-nav">
-            <%= dropdown(container_tag: :li, items_tag: nil, alignment: :end, classname: 'nav-item dropdown-friend') do |dd| %>
-              <% dd.trigger do %>
-                <i class="icofont-users-alt-4"></i>
-              <% end %>
-              <% dd.item do |name, url| %>
-                <%= render 'shared/header_dropdown_heading',
-                  title: 'Friend Requests',
-                  actions: [{ label: 'Settings', url: '#' }, { label: 'Mark all as Read', url: '#' }] %>
-              <% end %>
-              <% dd.item do |name, url| %>
-                <div class="item-body">
-                  <%= render 'shared/friend_request' %>
-                </div>
-              <% end %>
-              <% dd.item do |name, url| %>
-                <div class="item-footer">
-                  <a href="#" class="view-btn">View All Friend Request</a>
-                </div>
-              <% end %>
-            <% end %>
-
-            <li class="nav-item dropdown dropdown-message">
-              <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="icofont-speech-comments"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-end">
-                <div class="item-heading">
-                  <h6 class="heading-title">Message</h6>
-                  <div class="heading-btn">
-                    <a href="#">Settings</a>
-                    <a href="#">Mark all as Read</a>
-                  </div>
-                </div>
-                <div class="item-body">
-                  <a href="#" class="media">
-                    <div class="item-img">
-                      <%= image_tag "/media/figure/notifiy_1.png" %>
-                    </div>
-                    <div class="media-body">
-                      <h6 class="item-title">Diana Jameson</h6>
-                      <div class="item-time">15 mins ago</div>
-                      <p>when are nknowen printer took galley of types ...</p>
-                    </div>
-                  </a>
-                  <a href="#" class="media">
-                    <div class="item-img">
-                      <%= image_tag "/media/figure/notifiy_2.png" %>
-                    </div>
-                    <div class="media-body">
-                      <h6 class="item-title">Quirty</h6>
-                      <div class="item-time">15 mins ago</div>
-                      <p>when are nknowen printer took galley of types ...</p>
-                    </div>
-                  </a>
-                  <a href="#" class="media">
-                    <div class="item-img">
-                      <%= image_tag "/media/figure/notifiy_3.png" %>
-                    </div>
-                    <div class="media-body">
-                      <h6 class="item-title">Zinia Jessy</h6>
-                      <div class="item-time">15 mins ago</div>
-                      <p>when are nknowen printer took galley of types ...</p>
-                    </div>
-                  </a>
-                </div>
-                <div class="item-footer">
-                  <a href="#" class="view-btn">View All Messages</a>
-                </div>
-              </div>
-            </li>
-
-            <li class="nav-item d-flex align-items-center">
-              <div class="dropdown dropdown-notification">
-                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="icofont-notification"></i><span class="notify-count">3</span>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end">
-                  <div class="item-heading">
-                    <h6 class="heading-title">Notifications</h6>
-                    <div class="heading-btn">
-                      <a href="#">Settings</a>
-                      <a href="#">Mark all as Read</a>
-                    </div>
-                  </div>
-                  <div class="item-body">
-                    <a href="#" class="media">
-                      <div class="item-img">
-                        <%= image_tag "/media/figure/notifiy_1.png" %>
-                      </div>
-                      <div class="media-body">
-                        <h6 class="item-title">Diana Jameson</h6>
-                        <div class="item-time">15 mins ago</div>
-                        <p>when are nknowen printer took galley of types ...</p>
-                      </div>
-                    </a>
-                    <a href="#" class="media">
-                      <div class="item-img">
-                        <%= image_tag "/media/figure/notifiy_2.png" %>
-                      </div>
-                      <div class="media-body">
-                        <h6 class="item-title">Quirty</h6>
-                        <div class="item-time">15 mins ago</div>
-                        <p>when are nknowen printer took galley of types ...</p>
-                      </div>
-                    </a>
-                    <a href="#" class="media">
-                      <div class="item-img">
-                        <%= image_tag "/media/figure/notifiy_3.png" %>
-                      </div>
-                      <div class="media-body">
-                        <h6 class="item-title">Zinia Jessy</h6>
-                        <div class="item-time">15 mins ago</div>
-                        <p>when are nknowen printer took galley of types ...</p>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="item-footer">
-                    <a href="#" class="view-btn">View All Notification</a>
-                  </div>
-                </div>
-              </div>
-            </li>
+            <%= render 'shared/friend_requests_dropdown', notifications: [1] %>
+            <%= render 'shared/chat_messages_dropdown', notifications: [2, 3] %>
+            <%= render 'shared/notifications_dropdown', notifications: [4, 5, 6] %>
           </ul>
 
           <ul class="navbar-nav inline-item header-control">
@@ -151,28 +32,52 @@
               <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <span class="media">
                   <span class="item-img">
-                    <%= image_tag "https://api.dicebear.com/7.x/micah/jpg?seed=Dexter-Morgan" %>
+                    <%= avatar_for current_profile %>
                     <span class="acc-verified"><i class="icofont-check"></i></span>
                   </span>
                   <span class="media-body">
-                    <span class="item-title">Dexter</span>
+                    <span class="item-title">
+                      <%= current_profile.full_name %>
+                    </span>
                   </span>
                 </span>
               </button>
               <div class="dropdown-menu">
                 <ul class="admin-options">
-                  <li><a href="#">Profile Settings</a></li>
-                  <li><a href="user-groups.html">Groups</a></li>
-                  <li><a href="forums.html">Forums</a></li>
-                  <li><a href="#">Settings</a></li>
-                  <li><a href="#">Terms and Conditions</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="login.html">Log Out</a></li>
+                  <li class="dropdown-item">
+                    <a href="#">
+                      <i class="icofont-ui-user"></i>
+                      Profile Settings
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="#">
+                      <i class="icofont-ui-settings"></i>
+                      Settings
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="user-groups.html">
+                      <i class="icofont-ui-user-group"></i>
+                      Circles
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="contact.html">
+                      <i class="icofont-support-faq"></i>
+                      Contact & Support
+                    </a>
+                  </li>
+                  <li class="dropdown-item">
+                    <%= link_to destroy_profile_session_path, data: { turbo_method: :delete } do %>
+                      <i class="icofont-logout"></i>
+                      Log out
+                    <% end %>
+                  </li>
                 </ul>
               </div>
             </li>
           </ul>
-
         </div>
       </div>
     </div>
