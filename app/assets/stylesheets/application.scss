@@ -23,3 +23,8 @@ $tooltip-bg: #5edfff;
 @import "layout";
 @import "pages";
 @import "dashboard";
+@import "animations";
+
+#notifications {
+  display: flex;
+}

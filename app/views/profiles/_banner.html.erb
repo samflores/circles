@@ -1,0 +1,27 @@
+<div class="banner-user" <%= background_style_for(profile) %>>
+  <div class="banner-content">
+    <div class="media">
+      <div class="item-img">
+        <%= avatar_for(profile) -%>
+      </div>
+      <div class="media-body">
+        <h3 class="item-title"><%= profile.full_name -%></h3>
+        <div class="item-subtitle"><%# profile.status %></div>
+        <!--
+        <ul class="item-social">
+          <li><a href="#" class="bg-fb"><i class="icofont-facebook"></i></a></li>
+          <li><a href="#" class="bg-twitter"><i class="icofont-twitter"></i></a></li>
+          <li><a href="#" class="bg-dribble"><i class="icofont-dribbble"></i></a></li>
+          <li><a href="#" class="bg-youtube"><i class="icofont-brand-youtube"></i></a></li>
+          <li><a href="#" class="bg-behance"><i class="icofont-behance"></i></a></li>
+        </ul>
+        -->
+        <ul class="user-meta">
+          <li>Posts: <span>0</span></li>
+          <li>Comments: <span>0</span></li>
+          <li>Views: <span>0</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

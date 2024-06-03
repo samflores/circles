@@ -19,6 +19,8 @@
   </div>
   <%= dropdown items_tag: nil, alignment: :end do |dd| %>
     <% dd.item 'Edit', '#' %>
-    <% dd.item 'Delete', '#' %>
+    <% dd.item do%>
+      <%= link_to 'Delete', [current_profile, status], class: 'dropdown-item', data: { turbo_method: :delete } %>
+    <% end %>
   <% end %>
 </div>

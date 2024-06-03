@@ -7,7 +7,7 @@
         </a>
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a href="index.html" class="nav-link active">Home</a>
+            <%= link_to 'Home', root_path, class: 'nav-link' %>
           </li>
         </ul>
 
@@ -21,11 +21,13 @@
             </div>
           </form>
 
-          <ul class="inline-item navbar-nav">
-            <%= render 'shared/friend_requests_dropdown', notifications: [1] %>
-            <%= render 'shared/chat_messages_dropdown', notifications: [2, 3] %>
-            <%= render 'shared/notifications_dropdown', notifications: [4, 5, 6] %>
-          </ul>
+          <%= turbo_frame_tag :notification, src: notifications_path, lazy: true do %>
+            <ul class="inline-item navbar-nav">
+              <%= render 'shared/friend_requests_dropdown', notifications: [] %>
+              <%= render 'shared/chat_messages_dropdown', notifications: [] %>
+              <%= render 'shared/notifications_dropdown', notifications: [] %>
+            </ul>
+          <% end %>
 
           <ul class="navbar-nav inline-item header-control">
             <li class="dropdown dropdown-admin">

@@ -1,0 +1,57 @@
+@keyframes lading {
+  0% {
+    left: 0%;
+    right: 100%;
+    width: 0%;
+  }
+
+  10% {
+    left: 0%;
+    right: 75%;
+    width: 25%;
+  }
+
+  90% {
+    right: 0%;
+    left: 75%;
+    width: 25%;
+  }
+
+  100% {
+    left: 100%;
+    right: 0%;
+    width: 0%;
+  }
+}
+
+[busy]:not([no-spinner]) {
+  position: relative;
+}
+
+[busy]:not([no-spinner])>* {
+  opacity: 0.25;
+}
+
+[busy]:not([no-spinner])::before {
+  content: '';
+  height: 2px;
+  opacity: 0.1;
+  background: #fff;
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0px;
+  left: 0px;
+}
+
+[busy]:not([no-spinner])::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 100%;
+  height: 2px;
+  background: #fff;
+  left: 0;
+  background: #fff;
+  width: 0;
+  animation: lading 2s linear infinite;
+}

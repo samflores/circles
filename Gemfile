@@ -40,9 +40,9 @@ group :development, :test do
 end
 
 group :development do
-  gem 'bullet'
+  # gem 'bullet'
   gem 'letter_opener', '~> 1.10'
-  gem 'rack-mini-profiler'
+  # gem 'rack-mini-profiler'
   gem 'web-console'
 end
 

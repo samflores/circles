@@ -1,0 +1,2 @@
+<%= turbo_stream.prepend :statuses_list, partial: 'statuses/status', locals: { status: @status } %>
+<%= turbo_stream.replace :errors, partial: 'shared/errors', locals: { errors: [] } %>

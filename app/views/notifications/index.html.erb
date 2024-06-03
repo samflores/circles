@@ -1,0 +1,7 @@
+<%= turbo_frame_tag :notification do %>
+  <ul class="inline-item navbar-nav">
+    <%= render 'shared/friend_requests_dropdown', notifications: @friends_notifications %>
+    <%= render 'shared/chat_messages_dropdown', notifications: @chat_notifications %>
+    <%= render 'shared/notifications_dropdown', notifications: [] %>
+  </ul>
+<% end %>
