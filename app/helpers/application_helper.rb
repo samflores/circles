@@ -7,6 +7,12 @@ module ApplicationHelper
     builder.build
   end
 
+  def notification_dropdown(type:, item_partial: nil, items: [])
+    builder = NotificationDropdownBuilder.new(self, item_partial:, type:, items:)
+    yield(builder) if block_given?
+    builder.build
+  end
+
   def avatar_for(profile)
     image_tag("https://api.dicebear.com/7.x/micah/jpg?seed=#{profile.full_name.parameterize.underscore}")
   end

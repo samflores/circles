@@ -1,0 +1,14 @@
+<div class="media">
+  <div class="item-img">
+    <%= image_tag '/media/figure/notifiy_1.png' %>
+  </div>
+  <div class="media-body">
+    <h6 class="item-title">
+      <%= link_to notification.item.profile.full_name, notification.item.profile %>
+    </h6>
+    <div class="item-time">
+      <%= time_ago_in_words(notification.created_at) %> ago
+    </div>
+    <p><%= notification.item.body.truncate(50) %></p>
+  </div>
+</div>

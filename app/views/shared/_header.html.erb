@@ -23,9 +23,9 @@
 
           <%= turbo_frame_tag :notification, src: notifications_path, lazy: true do %>
             <ul class="inline-item navbar-nav">
-              <%= render 'shared/friend_requests_dropdown', notifications: [] %>
-              <%= render 'shared/chat_messages_dropdown', notifications: [] %>
-              <%= render 'shared/notifications_dropdown', notifications: [] %>
+              <%= notification_dropdown(type: :friends) %>
+              <%= notification_dropdown(type: :chat) %>
+              <%= notification_dropdown(type: :general) %>
             </ul>
           <% end %>
 

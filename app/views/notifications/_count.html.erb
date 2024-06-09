@@ -1,0 +1,8 @@
+<%= tag.div id: "#{type}_notifications_count" do %>
+  <% if count > 0 %>
+    <span class="notify-count">
+      <%= count > 9 ? "9+" : count  %>
+    </span>
+  <% end %>
+<% end %>
+

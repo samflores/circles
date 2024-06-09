@@ -33,5 +33,6 @@
     </div>
 
     <%= javascript_importmap_tags %>
+    <%= turbo_stream_from current_profile, :broadcast %>
   </body>
 </html>

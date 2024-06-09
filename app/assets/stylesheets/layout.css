@@ -1767,6 +1767,11 @@ nav.template-main-menu>ul>li:hover ul.mega-menu {
   background-color: #f6f9fd;
 }
 
+.fixed-header .header-control .dropdown .dropdown-menu .item-body .item-empty {
+  padding: 15px 22px;
+  text-align: center;
+}
+
 .fixed-header .header-control .dropdown .dropdown-menu .item-body .media {
   padding: 20px 25px 15px;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1842,52 +1847,52 @@ nav.template-main-menu>ul>li:hover ul.mega-menu {
 }
 
 @media only screen and (max-width: 575px) {
-  .fixed-header .header-control .dropdown-friend .dropdown-menu {
+  .fixed-header .header-control .dropdown-friends .dropdown-menu {
     left: -75px;
   }
 }
 
 @media only screen and (max-width: 575px) {
-  .fixed-header .header-control .dropdown-friend .dropdown-menu:before {
+  .fixed-header .header-control .dropdown-friends .dropdown-menu:before {
     left: 82px;
   }
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-heading {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-heading {
   padding-bottom: 4px;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body {
   background-color: #ffffff;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media {
   border-bottom: 1px solid #e8edf4;
   padding: 26px 22px 18px;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media:last-child {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media:last-child {
   border-bottom: none;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media .item-img {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media .item-img {
   margin-top: 0;
   position: relative;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media .item-img:after {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media .item-img:after {
   content: url("../../media/figure/chat_round_shape3.png");
   position: absolute;
   top: -5px;
   left: -5px;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media .item-img img {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media .item-img img {
   height: 38px;
   width: 38px;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media .item-img .chat-status {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media .item-img .chat-status {
   display: block;
   height: 12px;
   width: 12px;
@@ -1900,39 +1905,39 @@ nav.template-main-menu>ul>li:hover ul.mega-menu {
   z-index: 2;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media .item-img .chat-status.offline {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media .item-img .chat-status.offline {
   background-color: #b0bacb;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media .item-img .chat-status.online {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media .item-img .chat-status.online {
   background-color: #17dd17;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media .item-title {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media .item-title {
   line-height: 18px;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media .item-title a {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media .item-title a {
   color: #000000;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media .item-title a:hover {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media .item-title a:hover {
   color: #615dfa;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media p {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media p {
   font-size: 12px;
   color: #9e9faf;
   line-height: 18px;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media .btn-area {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media .btn-area {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media .btn-area a {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media .btn-area a {
   text-align: center;
   font-size: 12px;
   color: #ffffff;
@@ -1942,7 +1947,7 @@ nav.template-main-menu>ul>li:hover ul.mega-menu {
   border-radius: 4px;
 }
 
-.fixed-header .header-control .dropdown-friend .dropdown-menu .item-body .media .btn-area a:hover {
+.fixed-header .header-control .dropdown-friends .dropdown-menu .item-body .media .btn-area a:hover {
   background-color: #5edfff;
 }
 
@@ -2195,21 +2200,21 @@ nav.template-main-menu>ul>li:hover ul.mega-menu {
 }
 
 @media only screen and (max-width: 575px) {
-  .fixed-header .header-control .dropdown-message .dropdown-menu {
+  .fixed-header .header-control .dropdown-chat .dropdown-menu {
     left: -105px;
   }
 
-  .fixed-header .header-control .dropdown-message .dropdown-menu:before {
+  .fixed-header .header-control .dropdown-chat .dropdown-menu:before {
     left: 112px;
   }
 }
 
 @media only screen and (max-width: 575px) {
-  .fixed-header .header-control .dropdown-notification .dropdown-menu {
+  .fixed-header .header-control .dropdown-general .dropdown-menu {
     left: -135px;
   }
 
-  .fixed-header .header-control .dropdown-notification .dropdown-menu:before {
+  .fixed-header .header-control .dropdown-general .dropdown-menu:before {
     left: 145px;
   }
 }

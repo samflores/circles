@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_08_234849) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_03_201256) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_234849) do
     t.index ["profile_id"], name: "index_friendships_on_profile_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.bigint "item_id", null: false
+    t.bigint "profile_id", null: false
+    t.boolean "viewed", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_type", "item_id"], name: "index_notifications_on_item"
+    t.index ["profile_id"], name: "index_notifications_on_profile_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "full_name", null: false
     t.string "bio"
@@ -46,7 +57,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_234849) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.boolean "tos_agreement", default: false, null: false
-    t.date "born_on", default: nil, null: false
+    t.date "born_on", null: false
     t.index ["email"], name: "index_profiles_on_email", unique: true
   end
 
@@ -73,6 +84,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_08_234849) do
   add_foreign_key "circles", "profiles"
   add_foreign_key "friendships", "circles"
   add_foreign_key "friendships", "profiles"
+  add_foreign_key "notifications", "profiles"
   add_foreign_key "reactions", "profiles"
   add_foreign_key "reactions", "statuses"
   add_foreign_key "statuses", "profiles"
