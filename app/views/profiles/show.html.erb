@@ -1,2 +1,12 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<%= render 'banner', profile: @profile %>
+<%= render 'header', profile: @profile %>
+<div class="row">
+  <div class="col-lg-8">
+    <%= render 'hobbies', profile: @profile %>
+    <%= render 'education', profile: @profile %>
+    <%= render 'contact', profile: @profile %>
+  </div>
+  <div class="col-lg-4 widget-block widget-break-lg">
+    <%= render 'about', profile: @profile %>
+  </div>
+</div>

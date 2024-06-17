@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-lg-8">
     <%= render 'new_post_form' %>
-    <%= render @statuses %>
+    <%= turbo_frame_tag :statuses_list do %>
+      <%= render @statuses %>
+    <% end %>
     <div class="block-box load-more-btn">
       <a href="#" class="item-btn"><i class="icofont-refresh"></i>Load More Posts</a>
     </div>

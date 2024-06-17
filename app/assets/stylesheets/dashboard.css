@@ -132,7 +132,7 @@
 }
 
 .banner-user {
-  background-image: url("../../media/banner/banner_user.jpg");
+  background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 8px;
@@ -217,6 +217,7 @@
 
 .banner-user .media .item-img img {
   border-radius: 50%;
+  width: 115px;
 }
 
 .banner-user .media .item-title {

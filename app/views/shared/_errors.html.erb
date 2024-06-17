@@ -1,0 +1,8 @@
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <% if errors && errors.any? %>
+    <% errors.each do |message| %>
+      <%= toast(title: 'Error', message:) %>
+    <% end %>
+  <% end %>
+</div>
+

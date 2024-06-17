@@ -1,4 +1,4 @@
-<div class="block-box post-input-tab">
+<%= form_with(model: [current_profile, Status.new], class: 'block-box post-input-tab') do |f| %>
   <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation" data-bs-toggle="tooltip" data-placement="top" title="STATUS">
       <a class="nav-link active" data-bs-toggle="tab" href="#post-status" role="tab" aria-selected="true"><i class="icofont-copy"></i>Status</a>
@@ -9,7 +9,7 @@
   </ul>
   <div class="tab-content">
     <div class="tab-pane fade show active" id="post-status" role="tabpanel">
-      <textarea name="status-input" id="status-input1" class="form-control textarea" placeholder="Share what are you thinking . . ." cols="30" rows="6"></textarea>
+      <%= f.text_area :body, class: 'form-control textarea', placeholder: 'Share what are you thinking . . .', cols: '30', rows: '6' %>
     </div>
     <div class="tab-pane fade" id="post-media" role="tabpanel">
       <%# <label>Media Gallery</label> <a href="#" class="media-insert"><i class="icofont-upload-alt"></i>Upload</a> %>
@@ -23,7 +23,7 @@
       <a href="#"><i class="icofont-location-pin"></i></a>
     </div>
     <div class="btn-group">
-      <button type="button" class="btn submit-btn main-btn">Post to all your circles</button>
+      <%= f.button 'Post to all your circles', class: 'btn submit-btn main-btn', type: 'submit' %>
       <button type="button" class="btn submit-btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
         <span class="visually-hidden">Select circles</span>
       </button>
@@ -36,4 +36,4 @@
       </ul>
     </div>
   </div>
-</div>
+<% end %>

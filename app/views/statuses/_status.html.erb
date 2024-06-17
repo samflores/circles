@@ -1,6 +1,8 @@
-<div class="block-box post-view">
-  <%= render 'statuses/header', status: %>
-  <%= render 'statuses/body', status: %>
-  <%= render 'statuses/footer', status: %>
-  <%= render 'statuses/comments', status: %>
-</div>
+<%= turbo_frame_tag status do %>
+  <div class="block-box post-view">
+    <%= render 'statuses/header', status: %>
+    <%= render 'statuses/body', status: %>
+    <%= render 'statuses/footer', status: %>
+    <%= render 'statuses/comments', status: %>
+  </div>
+<% end %>

@@ -9,10 +9,14 @@ Rails.application.routes.draw do
                passwords: 'profiles/passwords'
              }
 
-  get 'news', to: 'newsfeeds#index'
   get 'up' => 'rails/health#show', as: :rails_health_check
 
-  resources :profiles, only: %i[show]
+  get 'news', to: 'newsfeeds#index'
+  resources :profiles, only: %i[show] do
+    resources :statuses, only: %i[create destroy]
+  end
+
+  resources :notifications, only: %i[index]
 
   root 'newsfeeds#index'
 end

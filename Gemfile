@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '3.3.1'
+ruby '3.3.2'
 
 gem 'importmap-rails'
 gem 'pg', '~> 1.1'
@@ -13,15 +13,8 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 
 gem 'devise', '~> 4.9'
+gem 'redis', '>= 4.0.1'
 
-# Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
-
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
-
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
 gem 'bootsnap', require: false
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
@@ -40,9 +33,9 @@ group :development, :test do
 end
 
 group :development do
-  gem 'bullet'
+  # gem 'bullet'
   gem 'letter_opener', '~> 1.10'
-  gem 'rack-mini-profiler'
+  # gem 'rack-mini-profiler'
   gem 'web-console'
 end
 

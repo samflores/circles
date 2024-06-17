@@ -7,8 +7,18 @@ module ApplicationHelper
     builder.build
   end
 
+  def notification_dropdown(type:, item_partial: nil, items: [])
+    builder = NotificationDropdownBuilder.new(self, item_partial:, type:, items:)
+    yield(builder) if block_given?
+    builder.build
+  end
+
   def avatar_for(profile)
-    image_tag("https://api.dicebear.com/7.x/micah/jpg?seed=#{profile.full_name.underscore}")
+    image_tag("https://api.dicebear.com/7.x/micah/jpg?seed=#{profile.full_name.parameterize.underscore}")
+  end
+
+  def background_style_for(profile)
+    %[style="--bg-image: url('https://picsum.photos/seed/#{profile.full_name.parameterize.underscore}/1170/337')"].html_safe
   end
 
   def toast(title: 'Alert', message: nil, closable: true)
